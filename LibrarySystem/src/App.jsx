@@ -1,7 +1,10 @@
+import Home from "./Components/Home"
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <Home/>
+    </div>
   )
 }
 
