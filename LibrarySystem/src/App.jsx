@@ -4,6 +4,7 @@ import BrowseBooks from "./Components/BrowseBooks";
 import BookDetails from "./Components/BookDetails";
 import ErrorPage from "./Components/ErrorPage";
 import NavBar from "./Components/NavBar";
+import AddBook from "./Components/AddBook";
 
 function Layout() {
   return (
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "browsebooks",
         element: <BrowseBooks />,
+      },
+      {
+        path: "Addbook",
+        element: <AddBook/>,
       },
       {
         path: "browsebooks/:category",

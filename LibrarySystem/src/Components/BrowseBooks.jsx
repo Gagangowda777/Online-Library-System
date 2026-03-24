@@ -1,18 +1,19 @@
 import { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
-import { bookData } from "../utils/BookData";
+import { useSelector } from "react-redux";
 import Categories from "./Categories";
 
 function BrowseBooks() {
   const { category } = useParams();
   const [searchQuery, setSearchQuery] = useState("");
+  const books = useSelector((state) => state.books.books);
 
   // Get unique categories
-  const categories = [...new Set(bookData.map((book) => book.category))];
+  const categories = [...new Set(books.map((book) => book.category))];
 
 
   const filteredBooks = useMemo(() => {
-    let filtered = bookData;
+    let filtered = books;
 
 
     if (category) {
@@ -30,7 +31,7 @@ function BrowseBooks() {
     }
 
     return filtered;
-  }, [category, searchQuery]);
+  }, [category, searchQuery, books]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">

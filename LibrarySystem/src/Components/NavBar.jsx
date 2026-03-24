@@ -23,7 +23,7 @@ function NavBar() {
           </a>
 
           <div>
-            <button className="border-black border p-1 rounded hover:bg-black hover:text-amber-50">Add Book</button>
+            <a href="/Addbook"><button className="border-black border p-1 rounded hover:bg-black hover:text-amber-50">Add Book</button></a>
           </div>
         </div>
       </div>
