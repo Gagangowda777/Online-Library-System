@@ -26,6 +26,9 @@ function NavBar() {
               className="w-48 rounded-md border border-gray-300 bg-white px-2 py-1 text-sm text-slate-800 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
             />
           </div>
+          <div>
+            <button className="border-black border p-1 rounded hover:bg-black hover:text-amber-50">Add Book</button>
+          </div>
         </div>
       </div>
     </header>
