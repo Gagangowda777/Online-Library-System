@@ -1,4 +1,3 @@
-import NavBar from "./NavBar";
 import { bookData } from "../utils/BookData";
 
 function Home() {
@@ -7,8 +6,6 @@ function Home() {
 
   return (
     <div>
-        <NavBar/>
-        
         <h1 className="text-2xl pl-10 pt-5">Welcome to Book Library</h1>
         <p className="text-gray-400 pl-10 ">Discover fiction, science, history, and more</p>
 
@@ -26,8 +23,8 @@ function Home() {
         <p className="text-xl pl-10 pt-10 pb-4 text-gray-600">Popular Books</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pl-10 pr-10 pb-10">
           {popularBooks.map(book => (
-            <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <img src={book.coverImage} alt={book.title} className="w-full h-48 object-cover" />
+            <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl ">
+              <img src={book.coverImage} alt={book.title} className="w-full h-50 object-cover" />
               <div className="p-4">
                 <h3 className="text-lg font-bold text-gray-800">{book.title}</h3>
                 <p className="text-gray-600 text-sm">{book.author}</p>

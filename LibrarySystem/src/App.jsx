@@ -1,11 +1,36 @@
-import Home from "./Components/Home"
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Home from "./Components/Home";
+import ErrorPage from "./Components/ErrorPage";
+import NavBar from "./Components/NavBar";
 
-function App() {
+function Layout() {
   return (
-    <div>
-      <Home/>
-    </div>
-  )
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  );
 }
 
-export default App
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;

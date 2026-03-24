@@ -9,23 +9,19 @@ function NavBar() {
 
         <div className="flex items-center space-x-6">
           <a
-            href="#"
+            href=""
             className="text-sm font-medium text-slate-700 hover:text-slate-900"
           >
             Home
           </a>
 
-          <div className="flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2">
-            <label htmlFor="browse-book" className="text-sm text-slate-600">
-              Browse Book
-            </label>
-            <input
-              id="browse-book"
-              type="search"
-              placeholder="Search..."
-              className="w-48 rounded-md border border-gray-300 bg-white px-2 py-1 text-sm text-slate-800 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-200"
-            />
-          </div>
+          <a
+            href=""
+            className="text-sm font-medium text-slate-700 hover:text-slate-900"
+          >
+            Browse Books
+          </a>
+
           <div>
             <button className="border-black border p-1 rounded hover:bg-black hover:text-amber-50">Add Book</button>
           </div>
@@ -35,4 +31,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default NavBar;
