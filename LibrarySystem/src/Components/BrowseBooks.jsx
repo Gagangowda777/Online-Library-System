@@ -8,14 +8,14 @@ function BrowseBooks() {
   const [searchQuery, setSearchQuery] = useState("");
   const books = useSelector((state) => state.books.books);
 
-  // Get unique categories
+  // mapping books based on category 
   const categories = [...new Set(books.map((book) => book.category))];
 
 
   const filteredBooks = useMemo(() => {
     let filtered = books;
 
-
+  //filtering books based on serach query from user  
     if (category) {
       filtered = filtered.filter(
         (book) => book.category.toLowerCase() === category.toLowerCase()
@@ -44,8 +44,7 @@ function BrowseBooks() {
           placeholder="Search by title or author..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
       </div>
 
       <Categories categories={categories} activeCategory={category} showAll={true} title="Categories" />
@@ -62,13 +61,11 @@ function BrowseBooks() {
             {filteredBooks.map((book) => (
               <div
                 key={book.id}
-                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl"
-              >
+                className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl">
                 <img
                   src={book.coverImage}
                   alt={book.title}
-                  className="w-full h-50 object-cover"
-                />
+                  className="w-full h-50 object-cover"/>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-800">{book.title}</h3>
                   <p className="text-gray-600 text-sm">{book.author}</p>
@@ -78,8 +75,7 @@ function BrowseBooks() {
                   <div className="flex justify-between items-center mt-4">
                     <Link
                       to={`/book/${book.id}`}
-                      className="inline-block bg-black text-white px-4 py-2 rounded hover:bg-slate-800 transition font-medium"
-                    >
+                      className="inline-block bg-black text-white px-4 py-2 rounded hover:bg-slate-800 transition font-medium">
                       View Details
                     </Link>
                   </div>

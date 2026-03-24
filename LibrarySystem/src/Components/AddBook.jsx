@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +6,7 @@ import { addBook } from '../store/booksSlice';
 function AddBook() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+// setting a state to collect user input to add book
   const [formData, setFormData] = useState({
     title: '',
     author: '',
@@ -20,14 +19,14 @@ function AddBook() {
   });
 
   const [errors, setErrors] = useState({});
-
+//setting form data which is enterd by users 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-    // Clear error when user starts typing
+
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -35,7 +34,7 @@ function AddBook() {
       }));
     }
   };
-
+// Form validations 
   const validateForm = () => {
     const newErrors = {};
 
@@ -87,12 +86,9 @@ function AddBook() {
             value={formData.title}
             onChange={handleChange}
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.title ? 'border-red-500' : 'border-gray-300'
-            }`}
-          />
+              errors.title ? 'border-red-500' : 'border-gray-300'}`}/>
           {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
         </div>
-
         <div>
           <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-2">
             Author *
@@ -104,9 +100,7 @@ function AddBook() {
             value={formData.author}
             onChange={handleChange}
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.author ? 'border-red-500' : 'border-gray-300'
-            }`}
-          />
+              errors.author ? 'border-red-500' : 'border-gray-300'}`}/>
           {errors.author && <p className="text-red-500 text-sm mt-1">{errors.author}</p>}
         </div>
 
@@ -121,9 +115,7 @@ function AddBook() {
             value={formData.publishedDate}
             onChange={handleChange}
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.publishedDate ? 'border-red-500' : 'border-gray-300'
-            }`}
-          />
+              errors.publishedDate ? 'border-red-500' : 'border-gray-300'}`}/>
           {errors.publishedDate && <p className="text-red-500 text-sm mt-1">{errors.publishedDate}</p>}
         </div>
 
@@ -140,9 +132,7 @@ function AddBook() {
               onChange={handleChange}
               min="1"
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.pages ? 'border-red-500' : 'border-gray-300'
-              }`}
-            />
+                errors.pages ? 'border-red-500' : 'border-gray-300'}`}/>
             {errors.pages && <p className="text-red-500 text-sm mt-1">{errors.pages}</p>}
           </div>
 
@@ -160,9 +150,7 @@ function AddBook() {
               max="5"
               step="0.1"
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.rating ? 'border-red-500' : 'border-gray-300'
-              }`}
-            />
+                errors.rating ? 'border-red-500' : 'border-gray-300'}`}/>
             {errors.rating && <p className="text-red-500 text-sm mt-1">{errors.rating}</p>}
           </div>
         </div>
@@ -177,9 +165,7 @@ function AddBook() {
             value={formData.category}
             onChange={handleChange}
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.category ? 'border-red-500' : 'border-gray-300'
-            }`}
-          >
+              errors.category ? 'border-red-500' : 'border-gray-300'}`}>
             <option value="">Select a category</option>
             <option value="Mystery">Mystery</option>
             <option value="Science Fiction">Science Fiction</option>
@@ -206,9 +192,7 @@ function AddBook() {
             onChange={handleChange}
             placeholder="https://example.com/image.jpg"
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.coverImage ? 'border-red-500' : 'border-gray-300'
-            }`}
-          />
+              errors.coverImage ? 'border-red-500' : 'border-gray-300'}`}/>
           {errors.coverImage && <p className="text-red-500 text-sm mt-1">{errors.coverImage}</p>}
         </div>
 
@@ -223,24 +207,20 @@ function AddBook() {
             onChange={handleChange}
             rows="4"
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.description ? 'border-red-500' : 'border-gray-300'
-            }`}
-          />
+              errors.description ? 'border-red-500' : 'border-gray-300'}`}/>
           {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description}</p>}
         </div>
 
         <div className="flex gap-4">
           <button
             type="submit"
-            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-          >
+            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
             Add Book
           </button>
           <button
             type="button"
             onClick={() => navigate('/browsebooks')}
-            className="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transition"
-          >
+            className="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transition">
             Cancel
           </button>
         </div>

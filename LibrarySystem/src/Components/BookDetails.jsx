@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { bookData } from "../utils/BookData";
 
+// displayning book details 
 function BookDetails() {
   const { id } = useParams();
   const book = bookData.find((b) => b.id === parseInt(id));
@@ -23,16 +24,14 @@ function BookDetails() {
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        {/* Book Cover */}
+
         <div className="md:col-span-1">
           <img
             src={book.coverImage}
             alt={book.title}
-            className="w-full rounded-lg shadow-lg"
-          />
+            className="w-full rounded-lg shadow-lg"/>
         </div>
 
-        {/* Book Details */}
         <div className="md:col-span-2">
           <h1 className="text-4xl font-bold text-slate-900 mb-2">{book.title}</h1>
           <p className="text-xl text-slate-600 mb-4">by {book.author}</p>
@@ -73,4 +72,4 @@ function BookDetails() {
   );
 }
 
-export default BookDetails;
+export default BookDetails

@@ -11,9 +11,7 @@ function Categories({ categories, activeCategory = null, showAll = true, title =
             className={`px-4 py-2 rounded-full font-medium transition ${
               !activeCategory
                 ? "bg-black text-white"
-                : "bg-gray-200 text-slate-900 hover:bg-gray-300"
-            }`}
-          >
+                : "bg-gray-200 text-slate-900 hover:bg-gray-300"}`}>
             All
           </Link>
         )}
@@ -24,9 +22,7 @@ function Categories({ categories, activeCategory = null, showAll = true, title =
             className={`px-4 py-2 rounded-full font-medium transition ${
               activeCategory === category
                 ? "bg-black text-white"
-                : "bg-gray-200 text-slate-900 hover:bg-gray-300"
-            }`}
-          >
+                : "bg-gray-200 text-slate-900 hover:bg-gray-300"}`}>
             {category}
           </Link>
         ))}
@@ -35,4 +31,4 @@ function Categories({ categories, activeCategory = null, showAll = true, title =
   );
 }
 
-export default Categories;
+export default Categories

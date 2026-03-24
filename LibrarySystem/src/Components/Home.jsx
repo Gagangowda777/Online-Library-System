@@ -3,10 +3,9 @@ import { bookData } from "../utils/BookData";
 import Categories from "./Categories";
 
 function Home() {
-  // Filtering books with rating above 4.4
+  // filtering books with more than 4.4 rating 
   const popularBooks = bookData.filter(book => book.rating > 4.4);
-  
-  // Get unique categories from bookData
+  // mapping books based on the category 
   const categories = [...new Set(bookData.map((book) => book.category))];
 
   return (
@@ -15,6 +14,7 @@ function Home() {
         <h1 className="text-2xl pl-10 pt-5">Welcome to Book Library</h1>
         <p className="text-gray-400 pl-10 ">Discover fiction, science, history, and more</p>
       </div>
+      {/* categories component */}
         <div className="pl-10 pr-10">
           <Categories categories={categories} showAll={false} title="Categories" />
         </div>
@@ -31,10 +31,10 @@ function Home() {
                 <p className="text-gray-700 text-sm mt-2 line-clamp-2">{book.description}</p>
                   <span className="text-gray-500 text-sm">rating {book.rating}</span>
                 <div className="flex justify-between items-center mt-4">
+                  {/* dynamic routing to each book */}
                   <Link
                     to={`/book/${book.id}`}
-                    className="inline-block bg-black text-white px-4 py-2 rounded hover:bg-slate-800 transition font-medium"
-                  >
+                    className="inline-block bg-black text-white px-4 py-2 rounded hover:bg-slate-800 transition font-medium">
                     View Details
                   </Link>
                 </div>
@@ -46,4 +46,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default Home

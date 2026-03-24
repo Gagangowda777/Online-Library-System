@@ -1,6 +1,6 @@
-
 import { useLocation, Link } from "react-router-dom";
 
+// to display error page if user enter invalid url
 function ErrorPage() {
   const location = useLocation();
 
@@ -14,8 +14,7 @@ function ErrorPage() {
         </p>
         <Link
           to="/"
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300"
-        >
+          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300">
           Home Page
         </Link>
       </div>
@@ -23,4 +22,4 @@ function ErrorPage() {
   );
 }
 
-export default ErrorPage;
+export default ErrorPage
