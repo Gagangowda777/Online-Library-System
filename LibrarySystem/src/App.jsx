@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./Components/Home";
+import BrowseBooks from "./Components/BrowseBooks";
+import BookDetails from "./Components/BookDetails";
 import ErrorPage from "./Components/ErrorPage";
 import NavBar from "./Components/NavBar";
 
@@ -20,6 +22,18 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "browsebooks",
+        element: <BrowseBooks />,
+      },
+      {
+        path: "browsebooks/:category",
+        element: <BrowseBooks />,
+      },
+      {
+        path: "book/:id",
+        element: <BookDetails />,
       },
     ],
   },

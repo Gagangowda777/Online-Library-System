@@ -9,14 +9,14 @@ function NavBar() {
 
         <div className="flex items-center space-x-6">
           <a
-            href=""
+            href="/"
             className="text-sm font-medium text-slate-700 hover:text-slate-900"
           >
             Home
           </a>
 
           <a
-            href=""
+            href="/browsebooks"
             className="text-sm font-medium text-slate-700 hover:text-slate-900"
           >
             Browse Books
