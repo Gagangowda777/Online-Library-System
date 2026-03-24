@@ -14,3 +14,19 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Project title 
+Online Library system 
+
+## Tech stack 
+React JS, Tailwind CSS, React-redux 
+
+## Description
+This is a React + Redux single-page app for managing books where you can browse books, add books, see book info and etc
+
+## instructions to run the application
+To the run the application 
+clone the project by using 
+    -> git clone https://github.com/Gagangowda777/Online-Library-System
+then 
+    -> npm run dev 
