@@ -42,7 +42,7 @@ function BookDetails() {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
               <p className="text-slate-600">Published Date</p>
               <p className="text-lg font-semibold text-slate-900">

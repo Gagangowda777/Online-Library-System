@@ -65,7 +65,7 @@ function BrowseBooks() {
                 <img
                   src={book.coverImage}
                   alt={book.title}
-                  className="w-full h-50 object-cover"/>
+                  className="w-full h-56 sm:h-64 object-cover"/>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-800">{book.title}</h3>
                   <p className="text-gray-600 text-sm">{book.author}</p>

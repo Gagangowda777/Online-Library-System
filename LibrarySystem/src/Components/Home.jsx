@@ -23,7 +23,7 @@ function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pl-10 pr-10 pb-10">
           {popularBooks.map(book => (
             <div key={book.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl ">
-              <img src={book.coverImage} alt={book.title} className="w-full h-50 object-cover" />
+              <img src={book.coverImage} alt={book.title} className="w-full h-56 sm:h-64 object-cover" />
               <div className="p-4">
                 <h3 className="text-lg font-bold text-gray-800">{book.title}</h3>
                 <p className="text-gray-600 text-sm">{book.author}</p>
